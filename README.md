@@ -1,5 +1,7 @@
 # Setting up Conda and Snakemake
 
+Code from RomainFeron/conda_snakemake.md
+
 ## Install Conda
 
 Full instructions available [here](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html).
