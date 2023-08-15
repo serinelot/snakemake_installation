@@ -1,7 +1,5 @@
 # Setting up Conda and Snakemake
 
-This code is from RomainFeron/conda_snakemake.md
-
 ## Install Conda
 
 Full instructions available [here](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html).
@@ -45,3 +43,24 @@ Mamba is a faster, more efficient drop-in replacement for the `conda` executable
 ```bash
 conda install -n base -c conda-forge mamba
 ```
+
+## Install Snakemake
+
+The recommended way to install and run Snakemake is to create a conda environment specifically for it:
+
+```bash
+# Create a new empty environment called "snakemake"
+conda create --name snakemake
+# Activate the environment "snakemake"
+conda activate snakemake
+# Install snakemake from the Bioconda channel (conda-forge contains dependencies)
+mamba install -c conda-forge -c bioconda snakemake
+```
+
+You can now activate the environment snakemake and run snakemake from it. It is advised to keep the environment as clean as possible, *i.e.* only install software related to running snakemake.
+
+## Running Snakemake with a scheduler (cluster)
+
+To run Snakemake on HPC platforms using a scheduler, it is recommended to use a Snakemake profile. An "official" collection of profiles for the most popular schedulers are available [here](https://github.com/snakemake-profiles/doc).
+
+If you're running some of my own Snakemake pipelines on an HPC platform with Slurm, I recommend using my own Slurm profile available [here](https://github.com/RomainFeron/snakemake-slurm).
